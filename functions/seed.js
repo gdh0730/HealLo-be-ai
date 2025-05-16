@@ -1,6 +1,6 @@
 // ⚠️ 환경 변수는 import 전에!
-// process.env.FIRESTORE_EMULATOR_HOST = "127.0.0.1:8080";
-// process.env.GCLOUD_PROJECT = "heallo-stg"; // 또는 GOOGLE_CLOUD_PROJECT
+// process.env.FIRESTORE_EMULATOR_HOST = "0.0.0.0:8080";
+// process.env.GCLOUD_PROJECT = "프로젝트 ID"; // 또는 GOOGLE_CLOUD_PROJECT
 
 import admin from "firebase-admin";
 import {today} from "./_lib/init.js"; // ← init.js 안에 admin 초기화가 *있으므로* 다시 초기화하지 않음
@@ -8,7 +8,7 @@ import {today} from "./_lib/init.js"; // ← init.js 안에 admin 초기화가 *
 // 이미 init.js 쪽에서 admin.initializeApp() 됐을 수 있으니 중복 방지
 if (!admin.apps.length) {
   admin.initializeApp({
-    projectId: "heallo-1e5e7", // ❶ 프로젝트 ID
+    projectId: "", // ❶ 프로젝트 ID
     credential: admin.applicationDefault(), // ❷ 로컬-ADC or GCP-SA
   });
 }
