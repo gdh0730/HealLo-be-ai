@@ -2,7 +2,7 @@ import {setGlobalOptions} from "firebase-functions/v2";
 // import {config as fnConfig} from "firebase-functions";
 import admin from "firebase-admin";
 
-const PROJECT_ID = process.env.GCLOUD_PROJECT; // heallo-stg 또는 heallo-1e5e7
+const PROJECT_ID = process.env.GCLOUD_PROJECT; // stg 또는 prod
 const DEFAULT_BUCKET = `${PROJECT_ID}.firebasestorage.app`; // 공식 버킷
 
 export const IS_EMULATOR = process.env.FUNCTIONS_EMULATOR === "true"; // 자동 주입
